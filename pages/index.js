@@ -1,1 +1,1 @@
-export default function Home() { return <h1>Xin chào từ Next.js trên Vercel!</h1>; }
+export default function Home({ time }) { return <h1>Xin chào từ Next.js! Time: {time}</h1>; } export async function getStaticProps() { return { props: { time: new Date().toISOString() }, revalidate: 10 }; }
