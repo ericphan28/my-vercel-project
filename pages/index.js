@@ -1,1 +1,1 @@
-export default function Home({ time }) { return <h1>Xin chào từ Next.js! Time: {time}</h1>; } export async function getStaticProps() { return { props: { time: new Date().toISOString() }, revalidate: 10 }; }
+export default function Home({ data }) { return <h1>{data.message}</h1>; } export async function getStaticProps() { const res = await fetch('https://vercel.thangphan.name/api/edge'); const data = await res.json(); return { props: { data }, revalidate: 10 }; }
